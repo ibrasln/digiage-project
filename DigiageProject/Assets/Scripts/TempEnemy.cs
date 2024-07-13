@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TempEnemy : MonoBehaviour, IEnemy
+public class TempEnemy : MonoBehaviour
+//, IEnemy
 {
     [SerializeField] float health = 2f;
     public void TakeDamage(float damage)
@@ -13,7 +12,7 @@ public class TempEnemy : MonoBehaviour, IEnemy
         //{
         //    Destroy(gameObject,0.1f);
         //}
-       
+
     }
 
     private void Update()

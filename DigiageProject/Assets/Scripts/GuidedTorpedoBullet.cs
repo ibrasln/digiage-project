@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GuidedTorpedoBullet : MonoBehaviour
@@ -21,16 +19,16 @@ public class GuidedTorpedoBullet : MonoBehaviour
     }
     public void RunTOTarget()
     {
-        if(target != null) rb.velocity = ( (Vector2)target.position - (Vector2)this.transform.position ).normalized*speed;
+        if (target != null) rb.velocity = ((Vector2)target.position - (Vector2)this.transform.position).normalized * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IEnemy Ienemy = collision.gameObject.GetComponent<IEnemy>();
-        if(Ienemy != null)
+        IDamageable Ienemy = collision.gameObject.GetComponent<IDamageable>();
+        if (Ienemy != null)
         {
             Ienemy.TakeDamage(Damage);
-            Destroy(this.gameObject );
+            Destroy(this.gameObject);
         }
     }
 

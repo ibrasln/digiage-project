@@ -1,16 +1,12 @@
 ﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     private Rigidbody2D _rb;
-    [SerializeField] private FixedJoystick joystick;
+    [SerializeField] private DynamicJoystick joystick;
     [SerializeField] private float Speed = 25f;
     [SerializeField] private float acceleration = 0.02f;
     [SerializeField] private float degreeAcceleration = 0.1f; // Daha yüksek bir deðer titremeyi azaltabilir
-
-
-    
-
 
     private void Awake()
     {
@@ -39,5 +35,10 @@ public class Player : MonoBehaviour
             return Vector2.ClampMagnitude(newVelocity, Speed);
         }
         else return target;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Debug.Log("Hurt Player");
     }
 }

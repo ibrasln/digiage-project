@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GuidedTorpedoGun : MonoBehaviour
@@ -32,7 +30,7 @@ public class GuidedTorpedoGun : MonoBehaviour
 
             hit = Physics2D.Raycast(bareel.position, bareel.up, range, _layerMask);
 
-            if (hit.collider != null && hit.collider.TryGetComponent<IEnemy>(out var enemy))
+            if (hit.collider != null && hit.collider.TryGetComponent<IDamageable>(out var enemy))
             {
                 Debug.Log("torbido run");
                 GuidedTorpedoBullet obj = Instantiate(BulletPrefab, bareel.position,
