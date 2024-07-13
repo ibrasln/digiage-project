@@ -131,7 +131,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,6 +139,69 @@ TextureImporter:
       bones: []
       spriteID: f245fd013e4d21a4f8911336851c5d47
       internalID: -657159269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShip_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e852217a9d4c489449e2edf11ce1a1c0
+      internalID: -287169398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShip_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 131
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41cdc5ebd92995448b940103c5566541
+      internalID: -1011588603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShip_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748b5e8a0005dd14a8733ea96527a94d
+      internalID: -7683705
       vertices: []
       indices: 
       edges: []
@@ -155,6 +218,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       SpaceShip_0: -657159269
+      SpaceShip_1: -287169398
+      SpaceShip_2: -1011588603
+      SpaceShip_3: -7683705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
