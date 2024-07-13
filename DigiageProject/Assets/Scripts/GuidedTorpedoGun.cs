@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,10 @@ using UnityEngine;
 public class GuidedTorpedoGun : MonoBehaviour
 {
     [SerializeField] float rateOfFre = 0.5f;
-    [SerializeField] GameObject TorpedoPrefab;
+    [SerializeField] GuidedTorpedoBullet BulletPrefab;
     [SerializeField] Transform bareel;
     [SerializeField] float range = 30f;
+    [SerializeField] LayerMask _layerMask;
 
     float time;
     RaycastHit2D hit;
@@ -17,17 +19,30 @@ public class GuidedTorpedoGun : MonoBehaviour
         time = Time.time;
     }
 
-
-    private void Update()
+    private void Start()
     {
-        if(Time.time -time > rateOfFre)
-        {
-            hit = Physics2D.Raycast(bareel.position, bareel.up, range);
-            if(hit.collider != null )
-            {
+        StartCoroutine(Shoot());
+    }
 
+    private IEnumerator Shoot()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(rateOfFre);
+
+            hit = Physics2D.Raycast(bareel.position, bareel.up, range, _layerMask);
+
+            if (hit.collider != null && hit.collider.TryGetComponent<IEnemy>(out var enemy))
+            {
+                Debug.Log("torbido run");
+                GuidedTorpedoBullet obj = Instantiate(BulletPrefab, bareel.position,
+                    Quaternion.identity);
+
+                obj.target = hit.collider.transform;
             }
- 
+            else
+                yield return null;
         }
     }
+
 }

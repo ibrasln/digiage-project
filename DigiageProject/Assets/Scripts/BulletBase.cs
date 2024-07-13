@@ -14,7 +14,7 @@ public class BulletBase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IBulletTriger bulletTriger = collision.gameObject.GetComponent<IBulletTriger>();
+        IEnemy bulletTriger = collision.gameObject.GetComponent<IEnemy>();
       if(bulletTriger != null)
         {
              bulletTriger.TakeDamage(damage);
