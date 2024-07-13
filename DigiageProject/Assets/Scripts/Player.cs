@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float acceleration = 0.02f;
     [SerializeField] private float degreeAcceleration = 0.1f; // Daha yüksek bir deðer titremeyi azaltabilir
 
+
+    
+
+
     private void Awake()
     {
         _rb = this.gameObject.GetComponent<Rigidbody2D>();
